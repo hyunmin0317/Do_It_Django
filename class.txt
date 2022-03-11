@@ -1,3 +1,5 @@
 pip install django==3.0.6
 django-admin startproject blog .
 python manage.py runserver
+python manage.py migrate
+python manage.py createsuperuser
