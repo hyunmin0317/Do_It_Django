@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from blog.models import Post, Category
+from blog.models import Post, Category, Tag
 
 
 class PostList(ListView):
@@ -37,6 +37,17 @@ def cagegories_page(request, slug):
         'category_less_post_count' : Post.objects.filter(category=None).count(),
         'category' : category,
         'post_list' : post_list
+    }
+    return render(request, 'blog/post_list.html', context)
+
+def show_tag_posts(request, slug):
+    tag = Tag.objects.get(slug=slug)
+    post_list = tag.post_set.all()
+    context = {
+        'categories': Category.objects.all(),
+        'category_less_post_count': Post.objects.filter(category=None).count(),
+        'tag': tag,
+        'post_list': post_list
     }
     return render(request, 'blog/post_list.html', context)
 
