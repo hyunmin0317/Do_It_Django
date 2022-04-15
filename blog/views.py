@@ -1,6 +1,13 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from blog.models import Post, Category, Tag
+
+
+class PostCreate(LoginRequiredMixin, CreateView):
+    model = Post
+    fields = ['title', 'content', 'hook', 'head_image', 'file_upload', 'category']
+
 
 
 class PostList(ListView):
