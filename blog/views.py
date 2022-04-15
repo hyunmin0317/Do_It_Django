@@ -25,6 +25,8 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
     fields = ['title', 'content', 'hook', 'head_image', 'file_upload', 'category']
 
+    template_name = 'blog/post_form_update.html'
+
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated and request.user == self.get_object().author:
             return super(PostUpdate, self).dispatch(request, *args, **kwargs)
