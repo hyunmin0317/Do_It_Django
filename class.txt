@@ -1,7 +1,0 @@
-pip install django==3.0.6
-django-admin startproject config .
-python manage.py runserver
-python manage.py migrate
-python manage.py createsuperuser
-django-admin startapp blog
-django-admin startapp single_pages

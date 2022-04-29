@@ -9,5 +9,17 @@
         <a href="/blog/">BLOG</a>
         <a href="/about_me/">about me</a>
     </nav>
+    {% for post in recent_posts %}
+        <div>
+            <h6>
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title }} by {{ post.author }}
+                </a>
+            </h6>
+            <p>
+                {{ post.get_content_markdown | truncatewords_html:30 | safe }}
+            </p>
+        </div>
+    {% endfor %}
 </body>
 </html>
