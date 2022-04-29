@@ -35,7 +35,10 @@
         {% endif %}
         <div class="card-body">
             <h2 class="card-title">{{ post.title}}</h2>
-            <p class="card-text">{{ post.hook | truncatewords:45 }}</p>
+            {% if post.hook %}
+                <h5 class="text-muted">{{ post.hook }}</h5>
+            {% endif %}
+            <p class="card-text">{{ post.get_content_markdown | truncatewords_html:45 |safe }}</p>
             <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Read More &rarr;</a>
 
             {% if post.tags.exists %}

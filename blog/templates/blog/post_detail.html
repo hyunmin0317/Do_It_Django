@@ -38,7 +38,7 @@
         <hr>
 
         <!-- Post Content -->
-        <p>{{ post.content }}</p>
+        <p>{{ post.get_content_markdown | safe }}</p>
 
           {% if post.file_upload %}
               <a href="{{ post.file_upload.url }}" class="btn btn-outline-dark" type="button" download>첨부 파일 다운로드</a>

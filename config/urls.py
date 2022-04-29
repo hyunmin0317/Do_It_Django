@@ -4,8 +4,9 @@ from django.urls import path, include
 from config import settings
 
 urlpatterns = [
-    path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls')),
+    path('markdownx/', include('markdownx.urls')),
     path('', include('single_pages.urls')),
 ]
 
