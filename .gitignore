@@ -279,4 +279,6 @@ cython_debug/
 pyvenv.cfg
 pip-selfcheck.json
 
+0*.py
+
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,venv
