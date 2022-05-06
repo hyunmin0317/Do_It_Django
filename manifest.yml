@@ -1,0 +1,7 @@
+---
+applications:
+  - name: hyunmin
+    buildpack: python_buildpack
+    memory: 512M
+    instances: 1
+    command : python manage.py runserver 8080
