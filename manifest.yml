@@ -4,4 +4,4 @@ applications:
     buildpack: python_buildpack
     memory: 512M
     instances: 1
-    command : python manage.py runserver 8080
+    command : waitress-serve --port=8080 config.wsgi:application
