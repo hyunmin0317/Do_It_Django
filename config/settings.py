@@ -131,8 +131,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/vcap/media'
-# MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
+# MEDIA_ROOT = '/var/vcap/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Authentication
